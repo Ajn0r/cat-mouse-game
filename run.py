@@ -54,17 +54,24 @@ def display_game(name):
     allowed_errors = 7
     done = False
     while not done:
+        # prints the image of the cat and mouse
         print(cat_and_mouse[len(wrong_guesses)])
         for letter in word:
+            # if the letter has been guessed, this will display it.
             if letter.lower() in guesses:
                 print(letter, end=" ")
             else:
+                # prints an _ for every letter in the word
                 print("_", end=" ")
+        # lets the player take a guess
         guess = input("\nEnter your guess: \n")
+        # check if input is larger than 0 and not more than one
         if len(guess) == 0 and len(guess) > 1:
             print("You can only enter one letter at a time")
+        # check if the guessed letter already has been guessed
         elif guesses.__contains__(guess.lower()):
             print(f"You have already guessed {guess}")
+        # if the input not is in the aplhabeth
         elif not guess.isalpha():
             print("You can only enter a letter from the alphabeth")
         else:
