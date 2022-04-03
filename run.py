@@ -44,6 +44,20 @@ def play_again(name):
             exit()
 
 
+def show_gamey(word):
+    """
+    Displays the game board
+    """
+    print(cat_and_mouse[len(wrong_guesses)])
+    for letter in word:
+        # if the letter has been guessed, this will display it.
+        if letter.lower() in guesses:
+            print(letter, end=" ")
+        else:
+            # prints an _ for every letter in the word
+            print("_", end=" ")
+
+
 def display_game(name):
     """
     Displayes the game and generates
@@ -53,15 +67,7 @@ def display_game(name):
     allowed_errors = 7
     done = False
     while not done:
-        # prints the image of the cat and mouse
-        print(cat_and_mouse[len(wrong_guesses)])
-        for letter in word:
-            # if the letter has been guessed, this will display it.
-            if letter.lower() in guesses:
-                print(letter, end=" ")
-            else:
-                # prints an _ for every letter in the word
-                print("_", end=" ")
+        show_game(word)
         # lets the player take a guess
         guess = input("\nEnter your guess: \n")
         # check if input is larger than 0 and not more than one
