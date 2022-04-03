@@ -26,7 +26,7 @@ def play_again(name):
     if one_more_time.lower() == "y":
         print("Lets play")
         # Should go to display_game later
-        start_game()
+        display_game(name)
     if one_more_time.lower() == "n":
         print(f"Thank you {name} for playing!")
         exit()
@@ -38,6 +38,15 @@ def play_again(name):
             start_game()
         else:
             exit()
+
+
+def display_game(name):
+    """
+    Displayes the game and generates 
+    a random word to be guesses
+    """
+    print(f"{name} here the game will be displayed!")
+    return False
 
 
 def ask_name():
