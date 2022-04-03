@@ -70,6 +70,7 @@ def display_game(name):
             guesses.append(guess.lower())
             if guess.lower() not in word:
                 wrong_guesses.append(guess)
+                print(f"You have guessed: {', '.join(wrong_guesses)}\n")
                 allowed_errors -= 1
                 # Add graphic later
             if allowed_errors > 1:
