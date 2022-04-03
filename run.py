@@ -31,10 +31,13 @@ def play_again(name):
         exit()
         # If the user inputs something other than y or n
         # they will end up in this loop.
-    if one_more_time.lower() != "y" or one_more_time.lower() != "n":
-        check_input(start_game, "press any key to quit")
-        input()
-        exit()
+    else:
+        check_input(start_game, "y to play again, any other key to exit game")
+        last_chance = input()
+        if last_chance.lower() == "y":
+            start_game()
+        else:
+            exit()
 
 
 def ask_name():
@@ -43,10 +46,10 @@ def ask_name():
     they will be asked if they are sure, if still no entry
     a name will be randomly generated for them.
     """
-    name = input("what is your name?")
+    name = input("what is your name?\n")
     if name == "":
-        print("oops, lookes like you did't enter anything...\n")
-        name_try_again = input("What is your name?")
+        print("oops, lookes like you did't enter anything...")
+        name_try_again = input("What is your name?\n")
         if name_try_again == "":
             name_list = ['Allan', 'Marie', 'Rose', 'Leonardo']
             random_name = random.choice(name_list)
