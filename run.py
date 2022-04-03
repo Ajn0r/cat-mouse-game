@@ -112,7 +112,9 @@ def ask_name():
         print("oops, lookes like you did't enter anything...")
         name_try_again = input("What is your name?\n")
         if name_try_again == "":
-            name_list = ['Allan', 'Marie', 'Rose', 'Leonardo']
+            name_list = [
+                'Allan', 'Snowdrop', 'Charmayanne', 'Leonardo',
+                'Hubert', 'Anderson', 'Marelow', 'Brielle']
             random_name = random.choice(name_list)
             print(
                 "If you don't want to tell me your name, it's okey!\n"
@@ -127,10 +129,8 @@ def ask_name():
             print(
                 f"I've got it! I'll just call you {random_name}!")
             return random_name
-        else: 
-            return name_try_again
-    else:
-        return name
+        return name_try_again
+    return name
 
 
 def start_game():
@@ -143,7 +143,6 @@ def start_game():
         if start.lower() == "y":
             print("Lets play")
             name = ask_name()
-            print(name)
             display_game(name)
             return False
         if start.lower() == "n":
