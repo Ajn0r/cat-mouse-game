@@ -1,18 +1,12 @@
-from curses.ascii import isalpha
-
-
-def check_input(letter):
+def check_input(letter, wanted):
     """
     Takes the players input and checks it
     """
     if letter == "":
         print("You must enter something")
         return False
-    elif not isalpha(letter):
-        print("You must enter a valid letter from the alphabeth")
-        return False
     else:
-        print("You must enter a valid input")
+        print(f"You must enter a valid input, {wanted}")
         return False
 
 
@@ -24,7 +18,7 @@ def start_game():
     while play:
         start_game = input("\tAre you ready to play? y/n\n")
         while start_game.lower() != "y" or "n":
-            check_input(start_game)
+            check_input(start_game, "y or n")
             break
         if start_game.lower() == "y":
             print("Lets play")
