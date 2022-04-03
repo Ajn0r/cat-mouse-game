@@ -1,5 +1,4 @@
 import random
-
 import time
 
 
@@ -13,14 +12,36 @@ def check_input(letter, wanted):
         print("You must enter something")
         return False
     else:
-        print(f"You must enter a valid input, {wanted}, please try again")
+        print(f"You must enter a valid input, {wanted}")
         return False
+
+
+def play_again(name):
+    """
+    Once the game is finished, asks the player
+    if they would like to play again
+    """
+    print(f"Well done {name}!")
+    one_more_time = input("Would you like to play again? y/n")
+    if one_more_time.lower() == "y":
+        print("Lets play")
+        exit()
+    if one_more_time.lower() == "n":
+        print(f"Thank you {name} for playing!")
+        exit()
+        # If the user inputs something other than y or n
+        # they will end up in this loop.
+    if one_more_time.lower() != "y" or one_more_time.lower() != "n":
+        check_input(start_game, "press any key to quit")
+        input()
+        exit()
 
 
 def ask_name():
     """
     Ask the player for a name, if they don't input anything
-    they will be asked if they are sure.
+    they will be asked if they are sure, if still no entry
+    a name will be randomly generated for them.
     """
     name = input("what is your name?")
     if name == "":
@@ -42,6 +63,8 @@ def ask_name():
             print(
                 f"I've got it! I'll just call you {random_name}!")
             return random_name
+        else: 
+            return name_try_again
     else:
         return name
 
@@ -57,6 +80,7 @@ def start_game():
             print("Lets play")
             name = ask_name()
             print(name)
+            play_again(name)
             return False
         if start.lower() == "n":
             print("Bye!")
