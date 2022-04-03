@@ -1,5 +1,9 @@
 import random
 import time
+from words import words
+
+guesses = []
+wrong_guesses = []
 
 
 def check_input(letter, wanted):
@@ -42,11 +46,14 @@ def play_again(name):
 
 def display_game(name):
     """
-    Displayes the game and generates 
+    Displayes the game and generates
     a random word to be guesses
     """
     print(f"{name} here the game will be displayed!")
     return False
+    done = False
+    while not done:
+        print("okej")
 
 
 def ask_name():
