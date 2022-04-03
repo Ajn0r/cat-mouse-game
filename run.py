@@ -44,7 +44,7 @@ def play_again(name):
             exit()
 
 
-def show_gamey(word):
+def show_game(word):
     """
     Displays the game board
     """
