@@ -2,6 +2,7 @@ import random
 import time
 from words import words
 
+word = random.choice(words)
 guesses = []
 wrong_guesses = []
 
@@ -51,9 +52,16 @@ def display_game(name):
     """
     print(f"{name} here the game will be displayed!")
     return False
+    allowed_errors = 7
     done = False
     while not done:
-        print("okej")
+        for letter in word:
+            if letter.lower() in guesses:
+                print(letter, end=" ")
+                # Add graphic later
+            else:
+                print("_", end=" ")
+                # Add graphic later
 
 
 def ask_name():
