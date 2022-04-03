@@ -31,7 +31,6 @@ def play_again(name):
     one_more_time = input("Would you like to play again? y/n")
     if one_more_time.lower() == "y":
         print("Lets play")
-        # Should go to display_game later
         display_game(name)
     if one_more_time.lower() == "n":
         print(f"Thank you {name} for playing!")
@@ -40,8 +39,7 @@ def play_again(name):
         check_input(start_game, "y to play again, any other key to exit game")
         last_chance = input()
         if last_chance.lower() == "y":
-            # Should go to display game later
-            start_game()
+            display_game(name)
         else:
             exit()
 
@@ -106,7 +104,7 @@ def display_game(name):
             "Better luck next time!\n"
             )
         print(cat_and_mouse[-1])
-
+    play_again(name)
 
 def ask_name():
     """
