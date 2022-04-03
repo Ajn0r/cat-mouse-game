@@ -6,7 +6,7 @@ def check_input(letter, wanted):
         print("You must enter something")
         return False
     else:
-        print(f"You must enter a valid input, {wanted}")
+        print(f"You must enter a valid input, {wanted}, please try again")
         return False
 
 
@@ -16,16 +16,16 @@ def start_game():
     """
     play = True
     while play:
-        start_game = input("\tAre you ready to play? y/n\n")
-        while start_game.lower() != "y" or "n":
-            check_input(start_game, "y or n")
-            break
-        if start_game.lower() == "y":
+        start = input("\nAre you ready to play? y/n\n")
+        if start.lower() == "y":
             print("Lets play")
             return False
-        elif start_game.lower() == "n":
+        if start.lower() == "n":
             print("Bye!")
             return False
+        while start.lower() != "y" or "n":
+            check_input(start_game, "y or n")
+            break
 
 
 def welcome():
