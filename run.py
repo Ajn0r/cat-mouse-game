@@ -73,16 +73,18 @@ def display_game(name):
                 print(f"You have guessed: {', '.join(wrong_guesses)}\n")
                 allowed_errors -= 1
                 # Add graphic later
+            else:
+                print(f"Great job {name}, {guess} is in the word!\n")
+
             if allowed_errors > 1:
                 print(f"You have got {allowed_errors} guesses left!")
             if allowed_errors == 1:
                 print("This will be your last guess, use it wisely!")
-                time.sleep(1)
+                time.sleep(0.7)
                 print("Alright here we go!")
                 time.sleep(0.5)
             if allowed_errors == 0:
                 break
-
             done = True
             for letter in word:
                 if letter.lower() not in guesses:
