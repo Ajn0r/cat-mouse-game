@@ -3,7 +3,7 @@ import time
 from words import words
 from graphic import cat_and_mouse
 
-word = random.choice(words)
+
 guesses = []
 wrong_guesses = []
 
@@ -49,6 +49,7 @@ def display_game(name):
     Displayes the game and generates
     a random word to be guesses
     """
+    word = random.choice(words)
     allowed_errors = 7
     done = False
     while not done:
@@ -104,7 +105,11 @@ def display_game(name):
             "Better luck next time!\n"
             )
         print(cat_and_mouse[-1])
+    wrong_guesses.clear()
+    guesses.clear()
+    random.shuffle(words)
     play_again(name)
+
 
 def ask_name():
     """
