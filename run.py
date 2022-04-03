@@ -80,14 +80,21 @@ def display_game(name):
                 print("Alright here we go!")
                 time.sleep(0.5)
             if allowed_errors == 0:
-                print(
-                    f"Ohno! What have you done {name}!\n"
-                    "Well I guess the cat is happy anyway!\n"
-                    f"The word i was thinking of was {word}\n"
-                    "Better luck next time!\n"
-                    )
-                # Display cat eating mouse
                 break
+
+            done = True
+            for letter in word:
+                if letter.lower() not in guesses:
+                    done = False
+    if done:
+        print("you found the word and saved the cat!")
+    else:
+        print(
+            f"Ohno! What have you done {name}!\n"
+            "Well I guess the cat is happy anyway!\n"
+            f"The word i was thinking of was {word}\n"
+            "Better luck next time!\n"
+            )
 
 
 def ask_name():
