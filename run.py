@@ -51,7 +51,6 @@ def display_game(name):
     a random word to be guesses
     """
     print(f"{name} here the game will be displayed!")
-    return False
     allowed_errors = 7
     done = False
     while not done:
@@ -62,6 +61,16 @@ def display_game(name):
             else:
                 print("_", end=" ")
                 # Add graphic later
+        guess = input("Enter your guess: ")
+        if len(guess) > 0 and len(guess) <= 1 and guess.isalpha():
+            guesses.append(guess.lower())
+            if guess.lower() not in word:
+                wrong_guesses.append(guess)
+                allowed_errors -= 1
+            if allowed_errors == 0:
+                break
+            
+
 
 
 def ask_name():
@@ -107,7 +116,7 @@ def start_game():
             print("Lets play")
             name = ask_name()
             print(name)
-            play_again(name)
+            display_game(name)
             return False
         if start.lower() == "n":
             print("Bye!")
