@@ -45,7 +45,7 @@ def play_again(name):
             exit()
 
 
-def display_game():
+def display_game(name):
     """
     Displayes the game and generates
     a random word to be guesses
@@ -56,23 +56,37 @@ def display_game():
         for letter in word:
             if letter.lower() in guesses:
                 print(letter, end=" ")
-                # Add graphic later
             else:
                 print("_", end=" ")
                 # Add graphic later
-        guess = input("Enter your guess: \n")
+        guess = input("\nEnter your guess: \n")
         if len(guess) == 0 and len(guess) > 1:
             print("You can only enter one letter at a time")
         elif guesses.__contains__(guess.lower()):
             print(f"You have already guessed {guess}")
         elif not guess.isalpha():
             print("You can only enter a letter from the alphabeth")
-        else: 
+        else:
             guesses.append(guess.lower())
             if guess.lower() not in word:
                 wrong_guesses.append(guess)
                 allowed_errors -= 1
+                # Add graphic later
+            if allowed_errors > 1:
+                print(f"You have got {allowed_errors} guesses left!")
+            if allowed_errors == 1:
+                print("This will be your last guess, use it wisely!")
+                time.sleep(1)
+                print("Alright here we go!")
+                time.sleep(0.5)
             if allowed_errors == 0:
+                print(
+                    f"Ohno! What have you done {name}!\n"
+                    "Well I guess the cat is happy anyway!\n"
+                    f"The word i was thinking of was {word}\n"
+                    "Better luck next time!\n"
+                    )
+                # Display cat eating mouse
                 break
 
 
@@ -119,7 +133,7 @@ def start_game():
             print("Lets play")
             name = ask_name()
             print(name)
-            display_game()
+            display_game(name)
             return False
         if start.lower() == "n":
             print("Bye!")
