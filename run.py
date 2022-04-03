@@ -25,16 +25,16 @@ def play_again(name):
     one_more_time = input("Would you like to play again? y/n")
     if one_more_time.lower() == "y":
         print("Lets play")
-        exit()
+        # Should go to display_game later
+        start_game()
     if one_more_time.lower() == "n":
         print(f"Thank you {name} for playing!")
         exit()
-        # If the user inputs something other than y or n
-        # they will end up in this loop.
     else:
         check_input(start_game, "y to play again, any other key to exit game")
         last_chance = input()
         if last_chance.lower() == "y":
+            # Should go to display game later
             start_game()
         else:
             exit()
@@ -108,7 +108,7 @@ def welcome():
         "I will think of a word and you'll guess it,"
         " one letter at a time\n"
         "For every wrong guess the cat gets one step"
-        " closer to the mouse\n\n")
+        " closer to the mouse\n")
     start_game()
 
 
