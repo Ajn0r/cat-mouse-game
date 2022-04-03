@@ -1,6 +1,7 @@
 import random
 import time
 from words import words
+from graphic import cat_and_mouse
 
 word = random.choice(words)
 guesses = []
@@ -53,12 +54,12 @@ def display_game(name):
     allowed_errors = 7
     done = False
     while not done:
+        print(cat_and_mouse[len(wrong_guesses)])
         for letter in word:
             if letter.lower() in guesses:
                 print(letter, end=" ")
             else:
                 print("_", end=" ")
-                # Add graphic later
         guess = input("\nEnter your guess: \n")
         if len(guess) == 0 and len(guess) > 1:
             print("You can only enter one letter at a time")
@@ -72,7 +73,6 @@ def display_game(name):
                 wrong_guesses.append(guess)
                 print(f"You have guessed: {', '.join(wrong_guesses)}\n")
                 allowed_errors -= 1
-                # Add graphic later
             else:
                 print(f"Great job {name}, {guess} is in the word!\n")
 
@@ -98,6 +98,7 @@ def display_game(name):
             f"The word i was thinking of was {word}\n"
             "Better luck next time!\n"
             )
+        print(cat_and_mouse[-1])
 
 
 def ask_name():
