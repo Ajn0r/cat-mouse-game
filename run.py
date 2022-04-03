@@ -1,3 +1,8 @@
+import random
+
+import time
+
+
 def check_input(letter, wanted):
     """
     Takes the players input and checks it, the function takes the input
@@ -18,12 +23,32 @@ def ask_name():
     they will be asked if they are sure.
     """
     name = input("what is your name?")
-    return name
+    if name == "":
+        print("oops, lookes like you did't enter anything...\n")
+        name_try_again = input("What is your name?")
+        if name_try_again == "":
+            name_list = ['Allan', 'Marie', 'Rose', 'Leonardo']
+            random_name = random.choice(name_list)
+            print(
+                "If you don't want to tell me your name, it's okey!\n"
+                "I guess I will just give you I name I like!\n"
+                "Hmm let me think..."
+                )
+            time.sleep(0.5)
+            print("...")
+            time.sleep(0.5)
+            print("...")
+            time.sleep(0.8)
+            print(
+                f"I've got it! I'll just call you {random_name}!")
+            return random_name
+    else:
+        return name
 
 
 def start_game():
     """
-    Ask if the player want to start the game, 
+    Ask if the player want to start the game,
     """
     play = True
     while play:
@@ -31,6 +56,8 @@ def start_game():
         if start.lower() == "y":
             print("Lets play")
             name = ask_name()
+            print(name)
+            return False
         if start.lower() == "n":
             print("Bye!")
             return False
