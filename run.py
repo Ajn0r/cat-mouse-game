@@ -1,6 +1,6 @@
 import random
 import time
-from words import words
+from words import hard_words, easy_words
 from graphic import cat_and_mouse
 
 
@@ -61,12 +61,11 @@ def show_game(word):
             print("_", end=" ")
 
 
-def display_game(name):
+def display_game(name, word):
     """
     Displayes the game and generates
     a random word to be guesses
     """
-    word = random.choice(words)
     allowed_errors = 7
     done = False
     while not done:
@@ -115,8 +114,30 @@ def display_game(name):
             )
     wrong_guesses.clear()
     guesses.clear()
-    random.shuffle(words)
+    random.shuffle(word)
     play_again(name)
+
+
+def difficulty(name):
+    """
+    Player choose at which level of
+    difficulty they would like to play
+    """
+    print(
+        "You will have 7 guesses at the word im thinking of"
+        "Would you like me to think of:"
+        "1: an easy word? or"
+        "2: A hard word?"
+        )
+    level = input("Choose 1 for easy and 2 for hard")
+    if level == 1 or "easy":
+        word = random.choice(easy_words)
+        display_game(name, word)
+    elif level == 2 or "hard":
+        word = random.choice(hard_words)
+        display_game(name, word)
+    else:
+        print("You must choose a valid option")
 
 
 def ask_name():
@@ -163,7 +184,7 @@ def start_game():
         if start.lower() == "y":
             print("Lets play\n")
             name = ask_name()
-            display_game(name)
+            difficulty(name)
             return False
         if start.lower() == "n":
             print("Bye!")

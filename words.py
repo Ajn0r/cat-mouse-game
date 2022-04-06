@@ -1,4 +1,4 @@
-words = [
+hard_words = [
     'affix',
     'avenue',
     'awkward',
@@ -39,4 +39,9 @@ words = [
     'scratch',
     'staff',
     'stretch'
+]
+easy_words = [
+    'cat',
+    'mouse',
+    'car'
 ]
