@@ -111,9 +111,8 @@ def display_game(name):
             f"Oh no! What have you done {name}!\n"
             "Well I guess the cat is happy anyway!\n"
             f"The word i was thinking of was {word}\n"
-            "~~ Better luck next time! ~~\n\n"
+            "  ~~ Better luck next time! ~~\n\n"
             )
-        print(cat_and_mouse[-1])
     wrong_guesses.clear()
     guesses.clear()
     random.shuffle(words)
