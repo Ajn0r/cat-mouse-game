@@ -61,6 +61,20 @@ def show_game(word):
             print("_", end=" ")
 
 
+def allow_guess(allowed_errors):
+    """
+    Checks how many allowed errors
+    the player has left
+    """
+    if allowed_errors > 1:
+        print(f"You have got {allowed_errors} guesses left!")
+    if allowed_errors == 1:
+        print("This will be your last guess, use it wisely!")
+        time.sleep(0.7)
+    if allowed_errors == 0:
+        return False
+
+
 def display_game(name, word):
     """
     Displayes the game and generates
@@ -92,12 +106,8 @@ def display_game(name, word):
             else:
                 print(f"Great job {name}, {guess} is in the word!\n")
 
-            if allowed_errors > 1:
-                print(f"You have got {allowed_errors} guesses left!")
-            if allowed_errors == 1:
-                print("This will be your last guess, use it wisely!")
-                time.sleep(0.7)
-            if allowed_errors == 0:
+            guesses_left = allow_guess(allowed_errors)
+            if guesses_left is False:
                 break
             done = True
             for letter in word:
@@ -124,10 +134,9 @@ def difficulty(name):
     """
     decicion = True
     print(
-        "You will have 7 guesses at the word im thinking of"
-        "Would you like me to think of:"
-        "1: an easy word? or"
-        "2: A hard word?"
+        "You will have 7 guesses at the word im thinking of\n"
+        "Would you like me to think of an \n"
+        "easy or hard word?\n"
         )
     while decicion:
         level = input("Choose e for easy and h for hard")
