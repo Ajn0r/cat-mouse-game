@@ -83,6 +83,7 @@ def display_game(name):
             guesses.append(guess.lower())
             if guess.lower() not in word:
                 wrong_guesses.append(guess)
+                print(f"Oh no, {guess} is not in the word!\n")
                 print(f"You have guessed: {', '.join(wrong_guesses)}\n")
                 allowed_errors -= 1
             else:
@@ -92,7 +93,7 @@ def display_game(name):
                 print(f"You have got {allowed_errors} guesses left!")
             if allowed_errors == 1:
                 print("This will be your last guess, use it wisely!")
-                time.sleep(0.7)
+                time.sleep(0.5)
                 print("Alright here we go!")
                 time.sleep(0.5)
             if allowed_errors == 0:
