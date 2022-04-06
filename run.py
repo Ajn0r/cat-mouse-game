@@ -64,13 +64,16 @@ def show_game(word):
 def allow_guess(allowed_errors):
     """
     Checks how many allowed errors
-    the player has left
+    the player has left to decide if the
+    get to make another guess
     """
     if allowed_errors > 1:
         print(f"You have got {allowed_errors} guesses left!")
+        return True
     if allowed_errors == 1:
         print("This will be your last guess, use it wisely!")
         time.sleep(0.7)
+        return True
     if allowed_errors == 0:
         return False
 
@@ -139,7 +142,7 @@ def difficulty(name):
         "easy or hard word?\n"
         )
     while decicion:
-        level = input("Choose e for easy and h for hard")
+        level = input("Choose e for easy and h for hard\n")
         if (level) == "e":
             word = random.choice(easy_words)
             display_game(name, word)
