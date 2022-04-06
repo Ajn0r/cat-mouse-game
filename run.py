@@ -33,7 +33,7 @@ def play_again(name):
     one_more_time = input("Would you like to play again? y/n\n")
     if one_more_time.lower() == "y":
         print("Lets play")
-        display_game(name)
+        difficulty(name)
     if one_more_time.lower() == "n":
         print(
             f"I guess this is it for now then {name}!"
@@ -43,7 +43,7 @@ def play_again(name):
         check_input(start_game, "y to play again, any other key to exit game")
         last_chance = input()
         if last_chance.lower() == "y":
-            display_game(name)
+            difficulty(name)
         else:
             exit()
 
@@ -114,7 +114,6 @@ def display_game(name, word):
             )
     wrong_guesses.clear()
     guesses.clear()
-    random.shuffle(word)
     play_again(name)
 
 
@@ -123,21 +122,24 @@ def difficulty(name):
     Player choose at which level of
     difficulty they would like to play
     """
+    decicion = True
     print(
         "You will have 7 guesses at the word im thinking of"
         "Would you like me to think of:"
         "1: an easy word? or"
         "2: A hard word?"
         )
-    level = input("Choose 1 for easy and 2 for hard")
-    if level == 1 or "easy":
-        word = random.choice(easy_words)
-        display_game(name, word)
-    elif level == 2 or "hard":
-        word = random.choice(hard_words)
-        display_game(name, word)
-    else:
-        print("You must choose a valid option")
+    while decicion:
+        level = input("Choose e for easy and h for hard")
+        if (level) == "e":
+            word = random.choice(easy_words)
+            display_game(name, word)
+        if (level) == "h":
+            word = random.choice(hard_words)
+            display_game(name, word)
+        while level != "e" or level != "h":
+            check_input(level, "e or h")
+            break
 
 
 def ask_name():
