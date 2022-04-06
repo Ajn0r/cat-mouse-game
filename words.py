@@ -1,3 +1,4 @@
+# Words for the hard level
 hard_words = [
     'affix',
     'avenue',
@@ -40,8 +41,15 @@ hard_words = [
     'staff',
     'stretch'
 ]
+
+# Words for easy level
 easy_words = [
-    'cat',
+    'kitten',
     'mouse',
-    'car'
+    'plane',
+    'television',
+    'telephone',
+    'pasta',
+    'chair',
+    'plant'
 ]
