@@ -28,16 +28,16 @@ def play_again(name):
     if they would like to play again
     """
     print(
-        f"Thank you for playing {name}!"
+        f"Thank you for playing {name}!\n"
         "I hoped you enjoyed it!\n")
-    one_more_time = input("Would you like to play again? y/n")
+    one_more_time = input("Would you like to play again? y/n\n")
     if one_more_time.lower() == "y":
         print("Lets play")
         display_game(name)
     if one_more_time.lower() == "n":
         print(
             f"I guess this is it for now then {name}!"
-            "See you next time!")
+            "\nSee you next time!")
         exit()
     else:
         check_input(start_game, "y to play again, any other key to exit game")
@@ -52,7 +52,6 @@ def show_game(word):
     """
     Displays the game board
     """
-    print(cat_and_mouse[len(wrong_guesses)])
     for letter in word:
         # if the letter has been guessed, this will display it.
         if letter.lower() in guesses:
@@ -87,9 +86,10 @@ def display_game(name):
             guesses.append(guess.lower())
             if guess.lower() not in word:
                 wrong_guesses.append(guess)
-                print(f"Oh no, {guess} is not in the word!\n")
+                print(f"Oh no, {guess} is not in the word!")
                 print(f"You have guessed: {', '.join(wrong_guesses)}\n")
                 allowed_errors -= 1
+                print(cat_and_mouse[len(wrong_guesses)])
             else:
                 print(f"Great job {name}, {guess} is in the word!\n")
 
@@ -97,9 +97,7 @@ def display_game(name):
                 print(f"You have got {allowed_errors} guesses left!")
             if allowed_errors == 1:
                 print("This will be your last guess, use it wisely!")
-                time.sleep(0.5)
-                print("Alright here we go!")
-                time.sleep(0.5)
+                time.sleep(0.7)
             if allowed_errors == 0:
                 break
             done = True
@@ -107,13 +105,13 @@ def display_game(name):
                 if letter.lower() not in guesses:
                     done = False
     if done:
-        print("you found the word and saved the cat!")
+        print("You found the word and saved the mouse!")
     else:
         print(
-            f"Ohno! What have you done {name}!\n"
+            f"Oh no! What have you done {name}!\n"
             "Well I guess the cat is happy anyway!\n"
             f"The word i was thinking of was {word}\n"
-            "Better luck next time!\n"
+            "~~ Better luck next time! ~~\n\n"
             )
         print(cat_and_mouse[-1])
     wrong_guesses.clear()
@@ -128,14 +126,16 @@ def ask_name():
     they will be asked if they are sure, if still no entry
     a name will be randomly generated for them.
     """
-    name = input("what is your name?\n")
+    name = input("What is your name?\n")
     if name == "":
-        print("oops, lookes like you did't enter anything...")
+        print(
+            "Oops, lookes like you did't enter anything..."
+            "\nLets try again!")
         name_try_again = input("What is your name?\n")
         if name_try_again == "":
             name_list = [
                 'Allan', 'Snowdrop', 'Charmayanne', 'Leonardo',
-                'Hubert', 'Anderson', 'Marelow', 'Brielle']
+                'Hubert', 'Anderson', 'Marelow', 'Brielle', "Bob"]
             random_name = random.choice(name_list)
             print(
                 "If you don't want to tell me your name, it's okey!\n"
@@ -148,7 +148,7 @@ def ask_name():
             print("...")
             time.sleep(0.8)
             print(
-                f"I've got it! I'll just call you {random_name}!")
+                f"I've got it! I'll just call you {random_name}!\n")
             return random_name
         return name_try_again
     return name
@@ -162,7 +162,7 @@ def start_game():
     while play:
         start = input("\nAre you ready to play? y/n\n")
         if start.lower() == "y":
-            print("Lets play")
+            print("Lets play\n")
             name = ask_name()
             display_game(name)
             return False
