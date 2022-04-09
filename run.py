@@ -124,7 +124,9 @@ def display_game(name, word):
             "\n_________________________________"
             "_________________________________\n")
     if done:
-        print("You found the word and saved the mouse!\n")
+        print(
+            f"Congratulations {name}!\n"
+            "You found the word and saved the mouse!\n")
         print(mouse[0])
     else:
         print(
