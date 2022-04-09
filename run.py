@@ -28,16 +28,16 @@ def play_again(name):
     if they would like to play again
     """
     print(
-        f"Thank you for playing {name}!\n"
-        "I hoped you enjoyed it!\n")
-    one_more_time = input("Would you like to play again? y/n\n")
+        "\tThank you for playing!\n"
+        "\tI hoped you enjoyed it!\n")
+    one_more_time = input("\tWould you like to play again? y/n\n")
     if one_more_time.lower() == "y":
-        print("Lets play")
+        print("\tLets play")
         difficulty(name)
     if one_more_time.lower() == "n":
         print(
-            f"I guess this is it for now then {name}!"
-            "\nSee you next time!")
+            f"\tI guess this is it for now then {name}!"
+            "\n\tSee you next time!")
         exit()
     else:
         check_input(start_game, "y to play again, any other key to exit game")
@@ -58,6 +58,7 @@ def show_game(word):
             print(letter, end=" ")
         else:
             # prints an _ for every letter in the word
+
             print("_", end=" ")
 
 
@@ -68,11 +69,11 @@ def allow_guess(allowed_errors, guess):
     get to make another guess
     """
     if allowed_errors > 1:
-        print(f"Oh no, {guess} is not in the word!")
-        print(f"You have got {allowed_errors} guesses left!")
+        print(f"\tOh no, {guess} is not in the word!\n")
+        print(f"\tYou have got {allowed_errors} guesses left\n")
         return True
     if allowed_errors == 1:
-        print("This will be your last guess, use it wisely!")
+        print("\tThis will be your last guess, use it wisely!\n")
         time.sleep(0.7)
         return True
     if allowed_errors == 0:
@@ -89,16 +90,16 @@ def display_game(name, word):
     while not done:
         show_game(word)
         # lets the player take a guess
-        guess = input("\nEnter your guess: \n")
+        guess = input("\n\n\tEnter your guess: \n")
         # check if input is larger than 0 and not more than one
-        if len(guess) == 0 and len(guess) > 1:
-            print("You can only enter one letter at a time")
+        if len(guess) == 0 or len(guess) > 1:
+            print("\tYou can only enter one letter at a time")
         # check if the guessed letter already has been guessed
         elif guesses.__contains__(guess.lower()):
-            print(f"You have already guessed {guess}")
+            print(f"\tYou have already guessed {guess}")
         # if the input not is in the aplhabeth
         elif not guess.isalpha():
-            print("You can only enter a letter from the alphabeth")
+            print("\tYou can only enter a letter from the alphabeth")
         else:
             guesses.append(guess.lower())
             if guess.lower() not in word:
@@ -108,24 +109,23 @@ def display_game(name, word):
                 guesses_left = allow_guess(allowed_errors, guess)
                 if guesses_left is False:
                     break
-                print(f"You have guessed: {', '.join(wrong_guesses)}\n")
+                print(f"\tYou have guessed: {', '.join(wrong_guesses)}")
             else:
-                print(f"Great job {name}, {guess} is in the word!\n")
+                print(f"\tGreat job {name}, {guess} is in the word!\n")
             done = True
             for letter in word:
                 if letter.lower() not in guesses:
                     done = False
         print(
-            "\n---------------------------------------------------"
-            "\n---------------------------------------------------")
+            "\n---------------------------------------------------\n")
     if done:
-        print("You found the word and saved the mouse!")
+        print("\t\nYou found the word and saved the mouse!\n")
     else:
         print(
-            f"Oh no! What have you done {name}!\n"
-            "Well I guess the cat is happy anyway!\n"
-            f"The word i was thinking of was {word}\n"
-            "  ~~ Better luck next time! ~~\n\n"
+            f"\tOh no! What have you done {name}!\n"
+            "\tWell I guess the cat is happy anyway!\n\n"
+            f"\tThe word i was thinking of was {word}\n\n"
+            "\t  ~~ Better luck next time! ~~\n\n"
             )
     wrong_guesses.clear()
     guesses.clear()
@@ -139,12 +139,12 @@ def difficulty(name):
     """
     decicion = True
     print(
-        "You will have 7 guesses at the word im thinking of\n"
-        "Would you like me to think of an \n"
-        "easy or hard word?\n"
+        "\n\tHow to play: "
+        "\n\tYou will have 7 guesses at the word im thinking of\n"
+        "\tWould you like me to think of an easy or hard word?\n\n"
         )
     while decicion:
-        level = input("Choose e for easy and h for hard\n")
+        level = input("\tChoose e for easy and h for hard\n")
         if (level) == "e":
             word = random.choice(easy_words)
             display_game(name, word)
@@ -162,29 +162,29 @@ def ask_name():
     they will be asked if they are sure, if still no entry
     a name will be randomly generated for them.
     """
-    name = input("What is your name?\n")
+    name = input("\n\tWhat is your player name?\n")
     if name == "":
         print(
-            "Oops, lookes like you did't enter anything..."
-            "\nLets try again!")
-        name_try_again = input("What is your name?\n")
+            "\tOops, lookes like you did't enter anything..."
+            "\n\tLets try again!")
+        name_try_again = input("\tWhat is your name?\n")
         if name_try_again == "":
             name_list = [
                 'Allan', 'Snowdrop', 'Charmayanne', 'Leonardo',
                 'Hubert', 'Anderson', 'Marelow', 'Brielle', "Bob"]
             random_name = random.choice(name_list)
             print(
-                "If you don't want to tell me your name, it's okey!\n"
-                "I guess I will just give you I name I like!\n"
-                "Hmm let me think..."
+                "\tIf you don't want to tell me your name, it's okey!\n"
+                "\tI guess I will just give you I name I like!\n"
+                "\tHmm let me think..."
                 )
             time.sleep(0.5)
-            print("...")
+            print("\t...")
             time.sleep(0.5)
-            print("...")
+            print("\t...")
             time.sleep(0.8)
             print(
-                f"I've got it! I'll just call you {random_name}!\n")
+                f"\tI've got it! I'll just call you {random_name}!\n")
             return random_name
         return name_try_again
     return name
@@ -196,14 +196,13 @@ def start_game():
     """
     play = True
     while play:
-        start = input("\nAre you ready to play? y/n\n")
+        start = input("\n\tAre you ready to play? y/n\n\t")
         if start.lower() == "y":
-            print("Lets play\n")
             name = ask_name()
             difficulty(name)
             return False
         if start.lower() == "n":
-            print("Bye!")
+            print("\tBye!")
             return False
         # If the user inputs something other than y or n
         # they will end up in this loop.
@@ -221,11 +220,11 @@ def welcome():
         "\t***********************************\n"
         "\t Welcome to the cat and mouse game!\n"
         "\t***********************************\n\n"
-        "Can you save the mouse from the cat?\n"
-        "I will think of a word and you'll guess it,"
-        " one letter at a time\n"
-        "For every wrong guess the cat gets one step"
-        " closer to the mouse\n")
+        "\tCan you save the mouse from the cat?\n"
+        "\tI will think of a word and you'll guess it,\n"
+        "\t one letter at a time\n"
+        "\tFor every wrong guess the cat gets one step\n"
+        "\t closer to the mouse\n\n")
     start_game()
 
 
