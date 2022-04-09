@@ -61,13 +61,14 @@ def show_game(word):
             print("_", end=" ")
 
 
-def allow_guess(allowed_errors):
+def allow_guess(allowed_errors, guess):
     """
     Checks how many allowed errors
     the player has left to decide if the
     get to make another guess
     """
     if allowed_errors > 1:
+        print(f"Oh no, {guess} is not in the word!")
         print(f"You have got {allowed_errors} guesses left!")
         return True
     if allowed_errors == 1:
@@ -101,21 +102,22 @@ def display_game(name, word):
         else:
             guesses.append(guess.lower())
             if guess.lower() not in word:
-                wrong_guesses.append(guess)
-                print(f"Oh no, {guess} is not in the word!")
-                print(f"You have guessed: {', '.join(wrong_guesses)}\n")
                 allowed_errors -= 1
                 print(cat_and_mouse[len(wrong_guesses)])
+                wrong_guesses.append(guess)
+                guesses_left = allow_guess(allowed_errors, guess)
+                if guesses_left is False:
+                    break
+                print(f"You have guessed: {', '.join(wrong_guesses)}\n")
             else:
                 print(f"Great job {name}, {guess} is in the word!\n")
-
-            guesses_left = allow_guess(allowed_errors)
-            if guesses_left is False:
-                break
             done = True
             for letter in word:
                 if letter.lower() not in guesses:
                     done = False
+        print(
+            "\n---------------------------------------------------"
+            "\n---------------------------------------------------")
     if done:
         print("You found the word and saved the mouse!")
     else:
