@@ -1,7 +1,7 @@
 import random
 import time
 from words import hard_words, easy_words
-from graphic import cat_and_mouse
+from graphic import cat_and_mouse, mouse
 
 
 guesses = []
@@ -111,6 +111,7 @@ def display_game(name, word):
                 print(f"You have guessed: {', '.join(wrong_guesses)}")
             else:
                 print(f"Great job {name}, {guess} is in the word!\n")
+                print(mouse[0])
             done = True
             for letter in word:
                 if letter.lower() not in guesses:
