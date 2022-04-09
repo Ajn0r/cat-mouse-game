@@ -108,7 +108,7 @@ def display_game(name, word):
                 guesses_left = allow_guess(allowed_errors, guess)
                 if guesses_left is False:
                     break
-                print(f"You have guessed: {', '.join(wrong_guesses)}")
+                print(f"You have guessed: {', '.join(wrong_guesses).lower()}")
             else:
                 print(
                     f"Great job {name},"
@@ -153,10 +153,10 @@ def difficulty(name):
         )
     while decicion:
         level = input("Choose e for easy and h for hard\n")
-        if (level) == "e":
+        if level.lower() == "e":
             word = random.choice(easy_words)
             display_game(name, word)
-        if (level) == "h":
+        if level.lower() == "h":
             word = random.choice(hard_words)
             display_game(name, word)
         while level != "e" or level != "h":
@@ -193,9 +193,9 @@ def ask_name():
             time.sleep(0.8)
             print(
                 f"I've got it! I'll just call you {random_name}!\n")
-            return random_name
-        return name_try_again
-    return name
+            return random_name.capitalize()
+        return name_try_again.capitalize()
+    return name.capitalize()
 
 
 def start_game():
