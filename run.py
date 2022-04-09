@@ -110,19 +110,22 @@ def display_game(name, word):
                     break
                 print(f"You have guessed: {', '.join(wrong_guesses)}")
             else:
-                print(f"Great job {name}, {guess} is in the word!\n")
-                print(mouse[0])
+                print(
+                    f"Great job {name},"
+                    f" your guess: {guess} is in the word!\n")
+                print(mouse[1])
             done = True
             for letter in word:
                 if letter.lower() not in guesses:
                     done = False
         print(
-            "\n_________________________________"
+            "_________________________________"
             "_________________________________"
             "\n_________________________________"
             "_________________________________\n")
     if done:
-        print("\nYou found the word and saved the mouse!\n")
+        print("You found the word and saved the mouse!\n")
+        print(mouse[0])
     else:
         print(
             f"Oh no! What have you done {name}!\n"
