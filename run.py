@@ -27,17 +27,14 @@ def play_again(name):
     Once the game is finished, asks the player
     if they would like to play again
     """
-    print(
-        "Thank you for playing!\n"
-        "I hoped you enjoyed it!\n")
     one_more_time = input("Would you like to play again? y/n\n")
     if one_more_time.lower() == "y":
         print("Lets play")
         difficulty(name)
     if one_more_time.lower() == "n":
         print(
-            f"I guess this is it for now then {name}!"
-            "\nSee you next time!")
+            "Thank you for playing!\n"
+            "I hoped you enjoyed it!\n")
         exit()
     else:
         check_input(start_game, "y to play again, any other key to exit game")
@@ -45,6 +42,9 @@ def play_again(name):
         if last_chance.lower() == "y":
             difficulty(name)
         else:
+            print(
+                "Thank you for playing!\n"
+                "I hoped you enjoyed it!\n")
             exit()
 
 
