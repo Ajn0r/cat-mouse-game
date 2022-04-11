@@ -255,16 +255,16 @@ def welcome():
                   Welcome to Save the mouse!
                                ___
                       _  _  .-'   '-.
-                     (.)(.)/         \   
+                     (.)(.)/         \\
                      /^ ^             ;
                     o_\\-mm-......-mm`~~~~~
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                   
+
                 Can you save the mouse from the cat?
             I will think of a word and you'll guess it,
                         one letter at a time.
              For every wrong guess, the cat gets one step
-                        closer to the mouse. 
+                        closer to the mouse.
         """)
     start_game()
 
