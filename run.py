@@ -90,9 +90,12 @@ def display_game(name, word):
         show_game(word)
         # lets the player take a guess
         guess = input("\n\nEnter your guess: \n")
-        # check if input is larger than 0 and not more than one
-        if len(guess) == 0 or len(guess) > 1:
+        # check if input is larger than one
+        if len(guess) > 1:
             print("You can only enter one letter at a time")
+        # check if the input is larger than 0 (not blank)
+        elif len(guess) == 0:
+            print("Oops, you must enter a letter")
         # check if the guessed letter already has been guessed
         elif guesses.__contains__(guess.lower()):
             print(f"You have already guessed {guess}")
@@ -119,10 +122,10 @@ def display_game(name, word):
                 if letter.lower() not in guesses:
                     done = False
         print(
-            "_________________________________"
-            "_________________________________"
-            "\n_________________________________"
-            "_________________________________\n")
+            "_______________________________"
+            "________________________________"
+            "\n_______________________________"
+            "________________________________\n")
     if done:
         print(
             f"Congratulations {name}!\n"
@@ -227,14 +230,20 @@ def welcome():
     print(
         """
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  Welcome to the cat and mouse game!
+                  Welcome to Save the mouse!
+                               ___
+                      _  _  .-'   '-.
+                     (.)(.)/         \   
+                     /^ ^             ;
+                    o_\\-mm-......-mm`~~~~~
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        """                                                           
-        "\n\tCan you save the mouse from the cat?\n"
-        "\tI will think of a word and you'll guess it,\n"
-        "\tone letter at a time.\n"
-        "\tFor every wrong guess the cat gets one step\n"
-        "\tcloser to the mouse\n\n")
+                                                                   
+                Can you save the mouse from the cat?
+            I will think of a word and you'll guess it,
+                        one letter at a time.
+             For every wrong guess, the cat gets one step
+                        closer to the mouse. 
+        """)
     start_game()
 
 
