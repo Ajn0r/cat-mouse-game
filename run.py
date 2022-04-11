@@ -158,9 +158,30 @@ def difficulty(name):
         level = input("Choose e for easy and h for hard\n")
         if level.lower() == "e":
             word = random.choice(easy_words)
+            print(
+                f"Good choise {name},\n"
+                "super hard word coming up!\n...")
+            time.sleep(0.8)
+            print("Just kidding! Easy it is!\n")
+            time.sleep(0.8)
+            print(
+                "I think this one is not to hard!\n"
+                f"The word im thinking of contains {len(word)} letters\n")
             display_game(name, word)
         if level.lower() == "h":
             word = random.choice(hard_words)
+            print(
+                f"Feeling confindent are we {name}?\n"
+                "Im not gonna make this easy for you!\n"
+                "Give me a sec to come up with a good one...")
+            time.sleep(1)
+            print("...\n")
+            time.sleep(0.8)
+            print(
+                "Alright good luck with this one!\n"
+                f"The word im thinking of contains {len(word)} letters\n"
+                "Good luck!\n")
+
             display_game(name, word)
         while level != "e" or level != "h":
             check_input(level, "e or h")
