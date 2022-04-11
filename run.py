@@ -94,7 +94,7 @@ def display_game(name, word):
         if len(guess) > 1:
             print("You can only enter one letter at a time")
         # check if the input is larger than 0 (not blank)
-        elif len(guess) == 0:
+        elif guess == "":
             print("Oops, you must enter a letter")
         # check if the guessed letter already has been guessed
         elif guesses.__contains__(guess.lower()):
