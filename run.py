@@ -160,8 +160,8 @@ def difficulty(name):
             word = random.choice(easy_words)
             print(
                 f"Good choise {name},\n"
-                "super hard word coming up!\n...")
-            time.sleep(0.8)
+                "Super hard word coming up!\n...")
+            time.sleep(1)
             print("Just kidding! Easy it is!\n")
             time.sleep(0.8)
             print(
@@ -172,13 +172,14 @@ def difficulty(name):
             word = random.choice(hard_words)
             print(
                 f"Feeling confindent are we {name}?\n"
-                "Im not gonna make this easy for you!\n"
-                "Give me a sec to come up with a good one...")
+                "Im not gonna make this easy for you!\n")
+            time.sleep(0.6)
+            print("Give me a sec to come up with a good one...")
             time.sleep(1)
             print("...\n")
             time.sleep(0.8)
             print(
-                "Alright good luck with this one!\n"
+                "Alright I will be impressed if you crack this one!\n"
                 f"The word im thinking of contains {len(word)} letters\n"
                 "Good luck!\n")
 
