@@ -48,19 +48,6 @@ def play_again(name):
             exit()
 
 
-def show_game(word):
-    """
-    Displays the game board
-    """
-    for letter in word:
-        # if the letter has been guessed, this will display it.
-        if letter.lower() in guesses:
-            print(letter, end=" ")
-        else:
-            # prints an _ for every letter in the word
-            print("_", end=" ")
-
-
 def allow_guess(allowed_errors, guess):
     """
     Checks how many allowed errors
@@ -141,6 +128,19 @@ def display_game(name, word):
     wrong_guesses.clear()
     guesses.clear()
     play_again(name)
+
+
+def show_game(word):
+    """
+    Displays the game board
+    """
+    for letter in word:
+        # if the letter has been guessed, this will display it.
+        if letter.lower() in guesses:
+            print(letter, end=" ")
+        else:
+            # prints an _ for every letter in the word
+            print("_", end=" ")
 
 
 def difficulty(name):
