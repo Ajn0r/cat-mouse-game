@@ -72,3 +72,14 @@ If the player’s guess is correct the underscore will change to the right lette
 If on the other hand, the player’s guess was incorrect, the cat will move closer to the mouse and the player will be let aware that the guess was incorrect. The number of guesses left and what wrong letters have been guessed will also be displayed for the player to see.
 
 If the player would try to input anything other than a letter from the alphabet, they will be shown a message declaring that they need to enter a valid guess. They will also be alerted if they try to guess a letter that already has been guessed.
+
+The game is finished once the player either finds the secret word or when they run out of guesses. If the player wins a happy mouse will appear and congratulate the player for saving the mouse, if they lose a happy cat appears and the secret word will be displayed.
+
+The player is then asked if they would like to play again, they can enter y or n, any other input will result in an error message asking the player to enter y if they would like to play again, any other input will quit the game.
+
+## Features I would like to implement in the future
+
+- A high score feature using google sheets.
+- More words to guess from.
+- Make the design of the game more appealing.
+- A menu, now the game flows as intended, but with a high score feature, a proper menu would be a must.
