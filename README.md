@@ -53,29 +53,71 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 ## Features
 
-The game starts with greeting the player and giving them a short description of the game, then asking if the player is ready to play. The player will need to input ‘y’ for yes or ‘n’ for no, otherwise, an error message will appear, and they cannot continue until a valid input has been made. If they input ‘n’ the game will shut down.
+### Start of the game
 
-If the player enters y they will be asked to enter their player name, this is then capitalized using .capitalize(). Since it’s a game name they can enter anything that they’d like, but they cannot leave it blank.
+- The game starts with greeting the player and giving them a short description of the game, then asking if the player is ready to play.
 
-If the player doesn’t enter anything they will be asked one more time, if still nothing is being entered the ‘computer’ will choose a random name from a name list and give it to the player. I thought it was a fun way to handle a blank input instead of just printing an error message to the terminal.
+![start-of-game](documentation/start.png)
 
-Once the name part is done a short how-to-play message will appear and the player can now choose if they would like to guess an easy or difficult word. They will need to enter e for easy and h for hard, all other inputs will not be accepted, and the player will get a message telling them to enter a valid input.
+- The player will need to input ‘y’ for yes or ‘n’ for no, otherwise, an error message will appear, and they cannot continue until a valid input has been made.
 
-A word to be guessed will be randomly selected from a list of words, there are two lists, one for easy words and one for hard words. The list of the hard words is from a webpage that says it’s the 40 hardest words for a hangman game, so some of them are indeed quite difficult to guess, giving the player some challenge!
+- If they input ‘n’ the game will shut down.
 
-Once the player has chosen the difficulty the game board will appear, and an underscore will be displayed for every letter in the word. The ‘computer’ also lets the player know how many letters the word contains.
+### Players 'game' name
 
-The player will be asked to enter their first guess, and they can only guess one letter at a time.
+- If the player enters y they will be asked to enter their player name, this is then capitalized using .capitalize(). Since it’s a game name they can enter anything that they’d like, but they cannot leave it blank.
 
-If the player’s guess is correct the underscore will change to the right letter, making it a little bit easier for the next guess, also a happy mouse will appear and let the player know that their guess was correct.
+### Invalid name input
 
-If on the other hand, the player’s guess was incorrect, the cat will move closer to the mouse and the player will be let aware that the guess was incorrect. The number of guesses left and what wrong letters have been guessed will also be displayed for the player to see.
+- If the player doesn’t enter anything they will be asked one more time, if still nothing is being e
+ntered the ‘computer’ will choose a random name from a name list and give it to the player. I thought it was a fun way to handle a blank input instead of just printing an error message to the terminal.
+- I have used time.sleep to make it look like the computer is thinking of an name.
 
-If the player would try to input anything other than a letter from the alphabet, they will be shown a message declaring that they need to enter a valid guess. They will also be alerted if they try to guess a letter that already has been guessed.
+
+
+### Choosing difficulty
+
+- Once the name part is done a short how-to-play message will appear and the player can now choose if they would like to guess an easy or difficult word.
+- They will need to enter e for easy and h for hard, all other inputs will not be accepted, and the player will get a message telling them to enter a valid input.
+
+### Generating a random word
+
+- A word to be guessed will be randomly selected from a list of words, there are two lists, one for easy words and one for hard words.
+- The list of the hard words is from a webpage that says it’s the 40 hardest words for a hangman game, so some of them are indeed quite difficult to guess, giving the player some challenge!
+
+### Displaying the game
+
+- Once the player has chosen the difficulty the game board will appear, and an underscore will be displayed for every letter in the word. The ‘computer’ also lets the player know how many letters the word contains.
+
+### Guessing
+
+- The player will be asked to enter their first guess, and they can only guess one letter at a time.
+
+### Correct guesses
+
+- If the player’s guess is correct the underscore will change to the right letter, making it a little bit easier for the next guess, also a happy mouse will appear and let the player know that their guess was correct.
+
+### Incorrect guesses
+
+- If on the other hand, the player’s guess was incorrect, the cat will move closer to the mouse and the player will be let aware that the guess was incorrect.
+
+- The number of guesses left and what wrong letters have been guessed will also be displayed for the player to see.
+
+![wrong-guess](documentation/wrong-guess.png)
+
+### Invalid guesses
+
+- If the player would try to input anything other than a letter from the alphabet, they will be shown a message declaring that they need to enter a valid guess.
+
+- They will also be alerted if they try to guess a letter that already has been guessed.
+
+![already-guessed](documentation/already-guessed.png)
 
 The game is finished once the player either finds the secret word or when they run out of guesses. If the player wins a happy mouse will appear and congratulate the player for saving the mouse, if they lose a happy cat appears and the secret word will be displayed.
 
 The player is then asked if they would like to play again, they can enter y or n, any other input will result in an error message asking the player to enter y if they would like to play again, any other input will quit the game.
+
+![play-again](documentation/play-again.png)
 
 ### Features I would like to implement in the future
 
