@@ -60,6 +60,9 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 ![start-of-game](documentation/start.png)
 
 - The player will need to input ‘y’ for yes or ‘n’ for no, otherwise, an error message will appear, and they cannot continue until a valid input has been made.
+- The input is checked with a function called checked_input, which also is used to validate the input for if the player would like to play again and when the player chooses the difficulty
+
+![invalid-start-input](documentation/ready-wrong-input.png)
 
 - If they input ‘n’ the game will shut down.
 
@@ -73,7 +76,7 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 ntered the ‘computer’ will choose a random name from a name list and give it to the player. I thought it was a fun way to handle a blank input instead of just printing an error message to the terminal.
 - I have used time.sleep to make it look like the computer is thinking of an name.
 
-
+![invalid-name-input](documentation/invalid-name.png)
 
 ### Choosing difficulty
 
@@ -113,7 +116,15 @@ ntered the ‘computer’ will choose a random name from a name list and give it
 
 ![already-guessed](documentation/already-guessed.png)
 
-The game is finished once the player either finds the secret word or when they run out of guesses. If the player wins a happy mouse will appear and congratulate the player for saving the mouse, if they lose a happy cat appears and the secret word will be displayed.
+### Finished game
+
+- The game is finished once the player either finds the secret word or when they run out of guesses.
+
+- If the player wins a happy mouse will appear and congratulate the player for saving the mouse.
+
+![player-won](documentation/won.png)
+
+- If they lose a happy cat appears and the secret word will be displayed.
 
 The player is then asked if they would like to play again, they can enter y or n, any other input will result in an error message asking the player to enter y if they would like to play again, any other input will quit the game.
 
