@@ -77,9 +77,27 @@ The game is finished once the player either finds the secret word or when they r
 
 The player is then asked if they would like to play again, they can enter y or n, any other input will result in an error message asking the player to enter y if they would like to play again, any other input will quit the game.
 
-## Features I would like to implement in the future
+### Features I would like to implement in the future
 
 - A high score feature using google sheets.
 - More words to guess from.
 - Make the design of the game more appealing.
 - A menu, now the game flows as intended, but with a high score feature, a proper menu would be a must.
+
+## Testing
+
+### Manual test
+
+- I have tried to enter invalid inputs to the the game.
+
+- I have had both friends and family test it with positive result
+
+- It has been tested both on my local terminal and the Code institute Heroku terminal.
+
+### Validator test
+
+- PEP8 Online linter (Python validator)
+
+The code passed without any errors.
+
+![pep8validated](documentation/pep8.png)
