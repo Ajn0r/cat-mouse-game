@@ -64,6 +64,12 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 - [x] At the hard level the words are said to be the 40 most difficult words for hangman games, so the player should be challenged.
 
+## Flow-chart
+
+A flow chart was made using Lucidchart
+
+![flow-chart](documentation/Flowchart.png)
+
 ## Features
 
 - The game consist of 9 functions
@@ -215,9 +221,23 @@ This was the first design, looked good on my local terminal, but not once deploy
 
 ## Credits
 
+### ASCII
+
 - Ascii code comes from:
 
-  - [Cat ASCII](https://user.xmission.com/~emailbox/ascii_cats.htm) 
+  - [Cat ASCII](https://user.xmission.com/~emailbox/ascii_cats.htm)
   - [Mouse ASCII](https://asciiart.website/index.php?art=animals/rodents/mice)
 
 - I have altered them slightly to match my game better.
+
+### Code
+
+I have been inspired by:
+
+- NeuralNine Youtube video [Creating a simple hangman game in Python](https://www.youtube.com/watch?v=5x6iAKdJB6U)
+
+Especially on how to display each letter of the word as an underscore while not guessed and also on how to determine if the game is finished.
+
+#### W3Scool
+
+- For information on how to use Python modules and methods, such as random.choice() or time.sleep(), and more.
