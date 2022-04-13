@@ -39,9 +39,9 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 #### First-time player Fulfillment
 
-- Easily navigated, the game follow a flow of logic and the player recives an error messages if they type any wrong input
-- Number of guesses left is displayed every time the player enters a wrong guess
-- Once the game is finished the player is asked if they would like to play again
+- [x] Easily navigated, the game follow a flow of logic and the player recives an error messages if they type any wrong input
+- [x] Number of guesses left is displayed every time the player enters a wrong guess
+- [x] Once the game is finished the player is asked if they would like to play again
 
 #### Returning player perspective
 
@@ -50,8 +50,8 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 #### Returning player Fulfillment
 
-- The player can choose from easy or hard level after thay have choosen their player name.
-- At the hard level the words are said to be the 40 most difficult words for hangman games, so the player should be challenged.
+- [x] The player can choose from easy or hard level after thay have choosen their player name.
+- [x] At the hard level the words are said to be the 40 most difficult words for hangman games, so the player should be challenged.
 
 ## Features
 
@@ -162,14 +162,27 @@ The code passed without any errors.
 ### Bugs
 
 - One bug found was that the player could not leave the name input blank, but they could however enter more than one blankspace and it would be accepted.
-    * The solution was using .strip() to the name input and that solved the issue
+  - The solution was using .strip() to the name input and that solved the issue
 
 ## Depoloyment
+
+The game was deployed to Heroku without any errors.
+I used the Code Institute video to remind myself how to do it.
+
+Since I only had imports that are in the standard Python library, I didn’t need to put them in the requirements.txt, so I went straight to it.
+
+- Logged in to Heroku
+- Created a new app
+- Set the buildpacks to Python and NodeJS in that order
+- Add config Vars KEY: PORT, VALUE: 8000
+- Link the Heroku app to the repository on Github
+- Choose the main branch and click on 'Deploy'
+- I also enabled automatic deploys since I Deployed before the game was 100% finished for testing reasons.
 
 ### Layout issues
 
 - The first ASCII image for 'game over' looked really good on my local terminal, after deploying the game on Heroku only the lower half of the cat was visible.
-    * I resolved it by changing it to another cat.
+  - I resolved it by changing it to another cat.
 
 This was the first design, looked good on my local terminal, but not once deployed to Heroku.
 
