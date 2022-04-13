@@ -189,6 +189,9 @@ The code passed without any errors.
 - One bug found was that the player could not leave the name input blank, but they could however enter more than one blank space and it would be accepted.
   - The solution was using .strip() to the name input and that solved the issue
 
+- A bug was that even if the game was finished it would still print out the letters guessed
+  - I made a function to check if the player had any guesses left called allow_guess, where the code for printing messages to the player if they enter a wrong guess is handled.
+
 ## Deployment
 
 The game was deployed to Heroku without any errors.
@@ -244,6 +247,10 @@ I have been inspired by:
 
 Especially on how to display each letter of the word as an underscore while not guessed and also on how to determine if the game is finished.
 
-#### W3Scool
+#### W3School
 
 - For information on how to use Python modules and methods, such as random.choice() or time.sleep(), and more.
+
+### Special thanks
+
+- Thanks to the Code Insitute Slack community, especially Owen for taking his time testing and pointing out some typos throughout the code.
