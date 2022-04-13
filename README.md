@@ -42,9 +42,11 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 - [x] Easily navigated, the game follows a flow of logic, and the player receives error messages if they type any wrong input
 
 - [x] Number of guesses left is displayed every time the player enters a wrong guess
+
 ![guesses-left](documentation/user-fulfilment.png)
 
 - [x] Once the game is finished the player is asked if they would like to play again
+
 ![play-again](documentation/play-again-fulfilment.png)
 
 #### Returning player perspective
@@ -56,6 +58,7 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 #### Returning player Fulfillment
 
 - [x] The player can choose from easy or hard level after they have chosen their player name.
+
 ![difficulty](documentation/level.png)
 
 - [x] At the hard level the words are said to be the 40 most difficult words for hangman games, so the player should be challenged.
@@ -63,6 +66,7 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 ## Features
 
 - The game consist of 9 functions
+- There are 3 files, one to hold the game, one for the lists of words, and one for the Ascii code named graphic.py.
 
 ### Start of the game
 
