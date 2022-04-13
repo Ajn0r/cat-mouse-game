@@ -50,13 +50,14 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 #### Returning player perspective
 
 - As a returning player I want to be able to choose difficulties.
-![difficulty](documentation/level.png)
 
 - As a returning player I want to be challenged by the game.
 
 #### Returning player Fulfillment
 
 - [x] The player can choose from easy or hard level after they have chosen their player name.
+![difficulty](documentation/level.png)
+
 - [x] At the hard level the words are said to be the 40 most difficult words for hangman games, so the player should be challenged.
 
 ## Features
