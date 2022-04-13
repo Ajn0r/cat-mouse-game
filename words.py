@@ -51,5 +51,16 @@ easy_words = [
     'telephone',
     'pasta',
     'chair',
-    'plant'
+    'plant',
+    'easy',
+    'cat',
+    'summer',
+    'again',
+    'jeans',
+    'deer',
+    'social',
+    'clock',
+    'candle',
+    'green',
+    'ear'
 ]
