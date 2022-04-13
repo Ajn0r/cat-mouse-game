@@ -200,3 +200,24 @@ Since I only had imports that are in the standard Python library, I didn’t nee
 This was the first design, looked good on my local terminal, but not once deployed to Heroku.
 
 ![to-big-cat](documentation/to-big-cat.png)
+
+## Technologies and resources used
+
+- Python
+- Git for version control
+- GitHub for keeping the files and documents
+- Heroku for deployment
+- W3 School
+- GitHub Wiki TOC generator
+- Grammarly for grammar check
+- Code Institute course material
+- Code Institute Slack channel
+
+## Credits
+
+- Ascii code comes from:
+
+  - [Cat ASCII](https://user.xmission.com/~emailbox/ascii_cats.htm) 
+  - [Mouse ASCII](https://asciiart.website/index.php?art=animals/rodents/mice)
+
+- I have altered them slightly to match my game better.
