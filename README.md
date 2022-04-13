@@ -68,6 +68,8 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 A flow chart was made using Lucidchart
 
+Since it was done I decided to make the difficulty levels would have the same amount of guesses, but instead two different lists of words, one with hard words and one with easier ones.
+
 ![flow-chart](documentation/Flowchart.png)
 
 ## Features
@@ -117,6 +119,8 @@ A flow chart was made using Lucidchart
 
 - The player will be asked to enter their first guess, and they can only guess one letter at a time.
 
+- There are if/elif statements checking the guess, making sure that the player cannot input an invalid guess, such as a number, symbol, or blank space.
+
 ### Correct guesses
 
 - If the player’s guess is correct the underscore will change to the right letter, making it a little bit easier for the next guess, also a happy mouse will appear and let the player know that their guess was correct.
@@ -128,6 +132,8 @@ A flow chart was made using Lucidchart
 - The number of guesses left and what wrong letters have been guessed will also be displayed for the player to see.
 
 ![wrong-guess](documentation/wrong-guess.png)
+
+- When there is only one guess left, the player will be notified about it.
 
 ### Invalid guesses
 
