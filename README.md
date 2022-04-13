@@ -6,6 +6,8 @@ Save the mouse is a Python terminal game, that runs in the Code Institute mock t
 
 The game is a classic hangman game but with a cat chasing a mouse instead of a man being hanged. For every wrong guess, the cat gets one step closer to the mouse, if the player wins the mouse will survive, if the player instead loses the cat will be very happy.
 
+[The game can be found here](https://cat-mouse-game.herokuapp.com)
+
 ## Who is the game for?
 
 The game is for anybody who wants to play a hangman game.
