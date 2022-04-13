@@ -88,7 +88,7 @@ def display_game(name, word):
             print(f"You have already guessed {guess}")
         # if the input not is in the aplhabeth
         elif not guess.isalpha():
-            print("You can only enter a letter from the alphabeth")
+            print("You can only enter a letter from the alphabet")
         else:
             guesses.append(guess.lower())
             if guess.lower() not in word:
@@ -165,7 +165,7 @@ def difficulty(name):
             print("Just kidding! Easy it is!\n")
             time.sleep(0.8)
             print(
-                "I think this one is not to hard!\n"
+                "I think this one is not too hard!\n"
                 f"The word im thinking of contains {len(word)} letters\n")
             display_game(name, word)
         if level.lower() == "h":
@@ -198,8 +198,8 @@ def ask_name():
     name = input("\nWhat is your player name?\n").strip()
     if name == "":
         print(
-            "Oops, lookes like you did't enter anything..."
-            "\nLets try again!")
+            "Oops, looks like you didn't enter anything..."
+            "\nLet's try again!")
         name_try_again = input("What is your name?\n").strip()
         if name_try_again == "":
             name_list = [
