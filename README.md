@@ -15,10 +15,11 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 - The player is greeted and asked if they would like to start the game, if they enter y they will be asked to type in their player’s name.
 - Once that is done, they will be given a short instruction on how to play the game and then asked if they want the computer to think of an easy or hard word.
-- The computer thinks of a word and the gameboard is displayed, the player can see how many letters the word contains by counting underscores, which are displayed instead of the letters in the word.
+- The computer thinks of a word and the gameboard is displayed, the player is let aware of how many letters the word contains and, each letter of the word is replaced by underscores.
 - The player gets to make 7 guesses, if it’s correct the letter appears instead of the underscore, and they can make another guess at the next letter.
-- If the guess is incorrectct the cat gets one step closer to the mouse and one guess will be drawn from the allowed 7.
+- If the guess is incorrect the cat gets one step closer to the mouse and one guess will be drawn from the allowed 7.
 - The game is finished once the word has been found or there are no more allowed guesses left
+- The player can choose to play again or not once the game is finished.
 
 ## User Experience
 
@@ -87,8 +88,7 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 ### Invalid name input
 
-- If the player doesn’t enter anything they will be asked one more time, if still nothing is being e
-ntered the ‘computer’ will choose a random name from a name list and give it to the player. I thought it was a fun way to handle a blank input instead of just printing an error message to the terminal.
+- If the player doesn’t enter anything they will be asked one more time, if still nothing is being entered the ‘computer’ will choose a random name from a name list and give it to the player. I thought it was a fun way to handle a blank input instead of just printing an error message to the terminal.
 - I have used time.sleep to make it look like the computer is thinking of an name.
 
 ![invalid-name-input](documentation/invalid-name.png)
