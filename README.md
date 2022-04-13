@@ -158,3 +158,19 @@ The player is then asked if they would like to play again, they can enter y or n
 The code passed without any errors.
 
 ![pep8validated](documentation/pep8.png)
+
+### Bugs
+
+- One bug found was that the player could not leave the name input blank, but they could however enter more than one blankspace and it would be accepted.
+    * The solution was using .strip() to the name input and that solved the issue
+
+## Depoloyment
+
+### Layout issues
+
+- The first ASCII image for 'game over' looked really good on my local terminal, after deploying the game on Heroku only the lower half of the cat was visible.
+    * I resolved it by changing it to another cat.
+
+This was the first design, looked good on my local terminal, but not once deployed to Heroku.
+
+![to-big-cat](documentation/to-big-cat.png)
