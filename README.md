@@ -232,6 +232,14 @@ This was the first design, looked good on my local terminal, but not once deploy
 
 ## Credits
 
+- Code Institute for the depolyment terminal
+
+### Words
+
+- The list of hard words comes from [here](https://futureofworking.com/40-hardest-words-to-guess-in-hangman)
+
+- The list of easy words are made up by me
+
 ### ASCII
 
 - Ascii code comes from:
@@ -249,6 +257,8 @@ I have been inspired by:
 
 Especially on how to display each letter of the word as an underscore while not guessed and also on how to determine if the game is finished.
 
+- [This website](https://inventwithpython.com/invent4thed/chapter8.html) for displaying the Ascii in the game
+
 #### W3School
 
 - For information on how to use Python modules and methods, such as random.choice() or time.sleep(), and more.
@@ -256,3 +266,5 @@ Especially on how to display each letter of the word as an underscore while not 
 ### Special thanks
 
 - Thanks to the Code Insitute Slack community, especially Owen for taking his time testing and pointing out some typos throughout the code.
+
+- Thanks to my mentor Spencer Bariball for guiding and always supporting me.
