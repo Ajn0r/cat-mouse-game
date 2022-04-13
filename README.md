@@ -21,7 +21,7 @@ The game is a classic hangman game but with a cat chasing a mouse instead of a m
   * [Flow-chart](#flow-chart)
   * [Features](#features)
     + [Start of the game](#start-of-the-game)
-    + [Players 'game' name](#players--game--name)
+    + [Players 'game' name](#players-game-name)
     + [Invalid name input](#invalid-name-input)
     + [Choosing difficulty](#choosing-difficulty)
     + [Generating a random word](#generating-a-random-word)
