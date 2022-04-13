@@ -68,13 +68,12 @@ def allow_guess(allowed_errors, guess):
 
 def display_game(name, word):
     """
-    Displayes the game and generates
-    a random word to be guesses
+    Handels guesses and displays the game
     """
     allowed_errors = 7
     done = False
     while not done:
-        show_game(word)
+        show_word(word)
         # lets the player take a guess
         guess = input("\n\nEnter your guess: \n")
         # check if input is larger than one
@@ -130,9 +129,11 @@ def display_game(name, word):
     play_again(name)
 
 
-def show_game(word):
+def show_word(word):
     """
-    Displays the game board
+    Displays the letter of the words
+    As underscores if the letter is not guessed
+    otherwise the correct letter.
     """
     for letter in word:
         # if the letter has been guessed, this will display it.
@@ -145,16 +146,16 @@ def show_game(word):
 
 def difficulty(name):
     """
-    Player choose at which level of
-    difficulty they would like to play
+    Players choose at which level of
+    the difficulty they would like to play
     """
-    decicion = True
+    decision = True
     print(
         "\n\t\tHow to play:\n"
-        "\nYou will have 7 guesses at the word im thinking of\n"
+        "\nYou will have 7 guesses at the word I'm thinking of\n"
         "Would you like me to think of an easy or hard word?\n"
         )
-    while decicion:
+    while decision:
         level = input("Choose e for easy and h for hard\n")
         if level.lower() == "e":
             word = random.choice(easy_words)
@@ -172,7 +173,7 @@ def difficulty(name):
             word = random.choice(hard_words)
             print(
                 f"Feeling confindent are we {name}?\n"
-                "Im not gonna make this easy for you!\n")
+                "I'm not gonna make this easy for you!\n")
             time.sleep(0.6)
             print("Give me a sec to come up with a good one...")
             time.sleep(1)
@@ -180,7 +181,7 @@ def difficulty(name):
             time.sleep(0.8)
             print(
                 "Alright I will be impressed if you crack this one!\n"
-                f"The word im thinking of contains {len(word)} letters\n"
+                f"The word I'm thinking of contains {len(word)} letters\n"
                 "Good luck!\n")
 
             display_game(name, word)
