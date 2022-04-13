@@ -17,7 +17,7 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 - Once that is done, they will be given a short instruction on how to play the game and then asked if they want the computer to think of an easy or hard word.
 - The computer thinks of a word and the gameboard is displayed, the player can see how many letters the word contains by counting underscores, which are displayed instead of the letters in the word.
 - The player gets to make 7 guesses, if it’s correct the letter appears instead of the underscore, and they can make another guess at the next letter.
-- If the guess is incorrect the cat gets one step closer to the mouse and one guess will be drawn from the allowed 7.
+- If the guess is incorrectct the cat gets one step closer to the mouse and one guess will be drawn from the allowed 7.
 - The game is finished once the word has been found or there are no more allowed guesses left
 
 ## User Experience
@@ -39,7 +39,7 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 #### First-time player Fulfillment
 
-- [x] Easily navigated, the game follow a flow of logic and the player recives an error messages if they type any wrong input
+- [x] Easily navigated, the game follows a flow of logic, and the player receives error messages if they type any wrong input
 - [x] Number of guesses left is displayed every time the player enters a wrong guess
 - [x] Once the game is finished the player is asked if they would like to play again
 
@@ -50,10 +50,12 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 #### Returning player Fulfillment
 
-- [x] The player can choose from easy or hard level after thay have choosen their player name.
+- [x] The player can choose from easy or hard level after they have chosen their player name.
 - [x] At the hard level the words are said to be the 40 most difficult words for hangman games, so the player should be challenged.
 
 ## Features
+
+- The game consist of 9 functions
 
 ### Start of the game
 
@@ -87,7 +89,7 @@ ntered the ‘computer’ will choose a random name from a name list and give it
 
 ### Generating a random word
 
-- A word to be guessed will be randomly selected from a list of words, there are two lists, one for easy words and one for hard words.
+- A word to be guessed will be randomly chosen using random.choice(), from a list of words, there are two lists, one for easy words and one for hard words.
 - The list of the hard words is from a webpage that says it’s the 40 hardest words for a hangman game, so some of them are indeed quite difficult to guess, giving the player some challenge!
 
 ### Displaying the game
@@ -161,10 +163,10 @@ The code passed without any errors.
 
 ### Bugs
 
-- One bug found was that the player could not leave the name input blank, but they could however enter more than one blankspace and it would be accepted.
+- One bug found was that the player could not leave the name input blank, but they could however enter more than one blank space and it would be accepted.
   - The solution was using .strip() to the name input and that solved the issue
 
-## Depoloyment
+## Deployment
 
 The game was deployed to Heroku without any errors.
 I used the Code Institute video to remind myself how to do it.
