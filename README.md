@@ -8,7 +8,7 @@ The game is a classic hangman game but with a cat chasing a mouse instead of a m
 
 [The game can be found here](https://cat-mouse-game.herokuapp.com)
 
-
+- Table of content
   * [Who is the game for?](#who-is-the-game-for)
   * [How to play](#how-to-play)
   * [User Experience](#user-experience)
