@@ -40,12 +40,18 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 #### First-time player Fulfillment
 
 - [x] Easily navigated, the game follows a flow of logic, and the player receives error messages if they type any wrong input
+
 - [x] Number of guesses left is displayed every time the player enters a wrong guess
+![guesses-left](documentation/user-fulfilment.png)
+
 - [x] Once the game is finished the player is asked if they would like to play again
+![play-again](documentation/play-again-fulfilment.png)
 
 #### Returning player perspective
 
 - As a returning player I want to be able to choose difficulties.
+![difficulty](documentation/level.png)
+
 - As a returning player I want to be challenged by the game.
 
 #### Returning player Fulfillment
