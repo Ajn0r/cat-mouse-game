@@ -2,6 +2,8 @@
 
 Save the mouse is a Python terminal game, that runs in the Code Institute mock terminal on Heroku.
 
+![amiresp](documentation/amiresp.png)
+
 The game is a classic hangman game but with a cat chasing a mouse instead of a man being hanged. For every wrong guess, the cat gets one step closer to the mouse, if the player wins the mouse will survive, if the player instead loses the cat will be very happy.
 
 ## Who is the game for?
@@ -37,8 +39,8 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 #### First-time player Fulfillment
 
-- Easily navigated, and error messages if they type wrong
-- Number of guesses left is displayed every time the player is wrong
+- Easily navigated, the game follow a flow of logic and the player recives an error messages if they type any wrong input
+- Number of guesses left is displayed every time the player enters a wrong guess
 - Once the game is finished the player is asked if they would like to play again
 
 #### Returning player perspective
@@ -48,7 +50,7 @@ The game displays a cat chasing a mouse rather than a man being hanged, so the g
 
 #### Returning player Fulfillment
 
-- The player can choose from easy or hard level
+- The player can choose from easy or hard level after thay have choosen their player name.
 - At the hard level the words are said to be the 40 most difficult words for hangman games, so the player should be challenged.
 
 ## Features
@@ -125,6 +127,8 @@ ntered the ‘computer’ will choose a random name from a name list and give it
 ![player-won](documentation/won.png)
 
 - If they lose a happy cat appears and the secret word will be displayed.
+
+![game-over](documentation/game-over.png)
 
 The player is then asked if they would like to play again, they can enter y or n, any other input will result in an error message asking the player to enter y if they would like to play again, any other input will quit the game.
 
