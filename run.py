@@ -112,18 +112,21 @@ def display_game(name, word):
             "________________________________"
             "\n_______________________________"
             "________________________________\n")
+    # if the player finds the word and wins
     if done:
         print(
             f"Congratulations {name}!\n"
             "You found the word and saved the mouse!\n")
         print(mouse[0])
+    # Game over
     else:
         print(
             f"Oh no! What have you done {name}!\n"
-            "Well I guess the cat is happy anyway!\n\n"
-            f"The word i was thinking of was {word}\n\n"
+            "Well, I guess the cat is happy anyway!\n\n"
+            f"The word I was thinking of was {word}\n\n"
             "  ~~ Better luck next time! ~~\n\n"
             )
+    # reset the lists containg guesses
     wrong_guesses.clear()
     guesses.clear()
     play_again(name)
@@ -132,11 +135,12 @@ def display_game(name, word):
 def show_word(word):
     """
     Displays the letter of the words
-    As underscores if the letter is not guessed
+    As underscores, if the letter is not guessed
     otherwise the correct letter.
     """
     for letter in word:
-        # if the letter has been guessed, this will display it.
+        # if the letter has been guessed, the letter will be displayed
+        # instead of an _
         if letter.lower() in guesses:
             print(letter, end=" ")
         else:
@@ -157,6 +161,7 @@ def difficulty(name):
         )
     while decision:
         level = input("Choose e for easy and h for hard\n")
+        # If player choose easy level, generates word from easy word list
         if level.lower() == "e":
             word = random.choice(easy_words)
             print(
@@ -169,6 +174,7 @@ def difficulty(name):
                 "I think this one is not too hard!\n"
                 f"The word im thinking of contains {len(word)} letters\n")
             display_game(name, word)
+        # If player choose hard level, generate word from hard word list
         if level.lower() == "h":
             word = random.choice(hard_words)
             print(
@@ -185,6 +191,7 @@ def difficulty(name):
                 "Good luck!\n")
 
             display_game(name, word)
+        # If player fails to enter a valid input
         while level != "e" or level != "h":
             check_input(level, "e or h")
             break
@@ -197,11 +204,14 @@ def ask_name():
     a name will be randomly generated for them.
     """
     name = input("\nWhat is your player name?\n").strip()
+    # If player fails to enter anything first time, they get one more chance
     if name == "":
         print(
             "Oops, looks like you didn't enter anything..."
             "\nLet's try again!")
         name_try_again = input("What is your name?\n").strip()
+        # If the player fails to enter something the second time
+        # they will be given a random name
         if name_try_again == "":
             name_list = [
                 'Allan', 'Snowdrop', 'Charmayanne', 'Leonardo',
@@ -219,8 +229,12 @@ def ask_name():
             time.sleep(0.8)
             print(
                 f"I've got it! I'll just call you {random_name}!\n")
+            # Returns randomly generated name if player
+            # fails to enter anything twice
             return random_name.capitalize()
+        # Returns name if player enters their name on second try
         return name_try_again.capitalize()
+    # Returns name if entered correctly first time
     return name.capitalize()
 
 
