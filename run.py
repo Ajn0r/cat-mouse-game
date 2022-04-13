@@ -195,12 +195,12 @@ def ask_name():
     they will be asked if they are sure, if still no entry
     a name will be randomly generated for them.
     """
-    name = input("\nWhat is your player name?\n")
+    name = input("\nWhat is your player name?\n").strip()
     if name == "":
         print(
             "Oops, lookes like you did't enter anything..."
             "\nLets try again!")
-        name_try_again = input("What is your name?\n")
+        name_try_again = input("What is your name?\n").strip()
         if name_try_again == "":
             name_list = [
                 'Allan', 'Snowdrop', 'Charmayanne', 'Leonardo',
