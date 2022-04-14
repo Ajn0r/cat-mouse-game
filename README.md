@@ -114,7 +114,7 @@ Since it was done I decided to make the difficulty levels would have the same am
 
 ## Features
 
-- The game consist of 9 functions
+- The game consist of 10 functions
 - There are 3 files, one to hold the game, one for the lists of words, and one for the Ascii code named graphic.py.
 
 ### Start of the game
@@ -124,7 +124,7 @@ Since it was done I decided to make the difficulty levels would have the same am
 ![start-of-game](documentation/start.png)
 
 - The player will need to input ‘y’ for yes or ‘n’ for no, otherwise, an error message will appear, and they cannot continue until a valid input has been made.
-- The input is checked with a function called checked_input, which also is used to validate the input for if the player would like to play again and when the player chooses the difficulty
+- The input is checked with a function called checked_input, which also is used to validate the input if the player would like to play again and when the player chooses the difficulty
 
 ![invalid-start-input](documentation/ready-wrong-input.png)
 
@@ -305,4 +305,4 @@ Especially on how to display each letter of the word as an underscore while not 
 
 - Thanks to the Code Insitute Slack community, especially Owen for taking his time testing and pointing out some typos throughout the code.
 
-- Thanks to my mentor Spencer Bariball for guiding and always supporting me.
+- Thanks to my mentor Spencer Barriball for guiding and always supporting me.
