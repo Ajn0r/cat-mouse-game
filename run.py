@@ -66,6 +66,32 @@ def allow_guess(allowed_errors, guess):
         return False
 
 
+def validate_guess(guess):
+    """
+    Validates the guess, making sure no
+    invalid inputs are made.
+    """
+    # check if input is larger than one
+    if len(guess) > 1:
+        print("You can only enter one letter at a time")
+        return False
+    # check if the input is larger than 0 (not blank)
+    elif guess == "":
+        print("Oops, you must enter a letter")
+        return False
+    # check if the guessed letter already has been guessed
+    elif guesses.__contains__(guess.lower()):
+        print(f"You have already guessed {guess}")
+        return False
+    # if the input not is in the aplhabeth
+    elif not guess.isalpha():
+        print("You can only enter a letter from the alphabet")
+        return False
+    # Returns true if its a valid guess
+    else:
+        return True
+
+
 def display_game(name, word):
     """
     Handels guesses and displays the game
@@ -75,21 +101,13 @@ def display_game(name, word):
     while not done:
         show_word(word)
         # lets the player take a guess
-        guess = input("\n\nEnter your guess: \n")
-        # check if input is larger than one
-        if len(guess) > 1:
-            print("You can only enter one letter at a time")
-        # check if the input is larger than 0 (not blank)
-        elif guess == "":
-            print("Oops, you must enter a letter")
-        # check if the guessed letter already has been guessed
-        elif guesses.__contains__(guess.lower()):
-            print(f"You have already guessed {guess}")
-        # if the input not is in the aplhabeth
-        elif not guess.isalpha():
-            print("You can only enter a letter from the alphabet")
-        else:
+        guess = input("\n\nEnter your guess: \n").strip()
+        # Checks that the guess is a valid guess
+        valid_guess = validate_guess(guess)
+        # if guess is valid
+        if valid_guess:
             guesses.append(guess.lower())
+            # If the guess is incorrect
             if guess.lower() not in word:
                 allowed_errors -= 1
                 print(cat_and_mouse[len(wrong_guesses)])
@@ -98,6 +116,7 @@ def display_game(name, word):
                 if guesses_left is False:
                     break
                 print(f"You have guessed: {', '.join(wrong_guesses).lower()}")
+            # if the guess was correct
             else:
                 print(
                     f"Great job {name},"
