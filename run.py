@@ -94,7 +94,14 @@ def validate_guess(guess):
 
 def display_game(name, word):
     """
-    Handels guesses and displays the game
+    Lets player take a guess and displayes the outcome
+    Also determines if game is done or not.
+    Reset guesses arrays once game is done.
+    ----------------------------------------------
+    Code for displaying Ascii has been inspired by
+    code found online, see credits in readme.
+    Code for handeling if guesses are correct or not
+    has been inspired by NeuralNine Youtube video, see credits
     """
     allowed_errors = 7
     done = False
@@ -153,9 +160,9 @@ def display_game(name, word):
 
 def show_word(word):
     """
-    Displays the letter of the words
-    As underscores, if the letter is not guessed
-    otherwise the correct letter.
+    Displays the letter of the words as underscores,
+    if the letter is not guessed otherwise the correct letter.
+    This code has been inspired by NeuralNine Youtube video, see credits
     """
     for letter in word:
         # if the letter has been guessed, the letter will be displayed
