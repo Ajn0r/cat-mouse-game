@@ -195,6 +195,8 @@ Since it was done I decided to make the difficulty levels would have the same am
 
 ![game-over](documentation/game-over.png)
 
+- Once the game is done the arrays that hold both guesses and wrong guesses are emptied using .clear()
+
 The player is then asked if they would like to play again, they can enter y or n, any other input will result in an error message asking the player to enter y if they would like to play again, any other input will quit the game.
 
 ![play-again](documentation/play-again.png)

@@ -99,8 +99,8 @@ def display_game(name, word):
     Reset guesses arrays once game is done.
     ----------------------------------------------
     Code for displaying Ascii has been inspired by
-    code found online, see credits in readme.
-    Code for handeling if guesses are correct or not
+    code found online, see credits in the readme.
+    Code for handling if guesses are correct or not
     has been inspired by NeuralNine Youtube video, see credits
     """
     allowed_errors = 7
