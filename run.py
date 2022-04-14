@@ -100,7 +100,7 @@ def display_game(name, word):
     ----------------------------------------------
     Code for displaying Ascii has been inspired by
     code found online, see credits in the readme.
-    Code for handling if guesses are correct or not
+    Code for handling if guesses are correct or not and if game is done
     has been inspired by NeuralNine Youtube video, see credits
     """
     allowed_errors = 7
