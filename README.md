@@ -295,7 +295,7 @@ I have been inspired by:
 
 - NeuralNine Youtube video [Creating a simple hangman game in Python](https://www.youtube.com/watch?v=5x6iAKdJB6U)
 
-Especially on how to display each letter of the word as an underscore while not guessed and also on how to determine if the game is finished.
+Especially on how to display each letter of the word as an underscore while not guessed, how to determine if guesses are correct or not and also on how to determine if the game is finished.
 
 - [This website](https://inventwithpython.com/invent4thed/chapter8.html) for displaying the Ascii in the game
 
